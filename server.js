@@ -12,5 +12,9 @@ app.use('/', function (req, res) {
     res.render('index')
 }); const server = http.createServer(app);
 
-const port = 8080;
+let port = 8080;
+
+if (process.argv.slice(2) != "")
+    port = parseInt(process.argv.slice(2)) 
+    
 server.listen(port); console.debug('Server listening on port ' + port);
