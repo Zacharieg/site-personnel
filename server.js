@@ -12,5 +12,5 @@ app.use('/', function (req, res) {
     res.render('index')
 }); const server = http.createServer(app);
 
-const port = 4000;
+const port = 8080;
 server.listen(port); console.debug('Server listening on port ' + port);
