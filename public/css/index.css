@@ -1,0 +1,458 @@
+* {
+    margin: 0;
+    font-family: 'Reem Kufi', sans-serif;
+}
+
+body {
+    background-color: #d9d7d7;
+}
+
+.card-container {
+    margin-left: 100px;
+    margin-bottom: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Header part */
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #062037;
+    padding: 60px 0;
+    color: white;
+}
+
+header h1 {
+    font-family: 'Oswald';
+    font-size: 60px;
+}
+
+header p {
+    font-size: 30px;
+}
+
+header img{
+    margin: 20px;
+    height: auto;
+    width: 300px;
+}
+
+/* Top bar */
+
+.top-bar {
+    position: fixed;
+    background-color: #062037;
+    top: 0;
+    width: 100%;
+    left: 0;
+    color: white;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    padding-left: 130px;
+    font-size: 40px;
+    z-index: 9;
+    text-transform: capitalize;
+    opacity: 0;
+}
+
+/* Menu part */
+
+.menu {
+    position: fixed;
+    height: 100%;
+    width: 80px;
+    left: 0;
+    top: 0;
+    background: #0a488f;
+    background: linear-gradient(169deg, #0caaff 0%, #090441 100%);
+    border-radius: 0 100px 0 0;
+    z-index: 10;
+    padding-top: 150px;
+    overflow: hidden;
+    transition: 0.5s ease-in-out;
+}
+
+.menu.expanded {
+    width: 300px;
+}
+
+.expand-menu {
+    position: absolute;
+    top: 20px;
+    padding: 20px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.expand-menu img {
+    opacity: 0.3;
+    transition: 0.1s ease-in-out;
+    width: auto;
+    height: 30px;
+}
+
+.expand-menu:hover img {
+    opacity: 1;
+}
+
+.menu-card-list {
+    width: 300px;
+}
+
+.menu-card-item {
+    display: flex;
+    position: relative;
+    height: 80px;
+    cursor: pointer;
+}
+
+.menu-card-link {
+    position: absolute;
+    top: 50%;
+    left: 40px;
+    transform: translate(-50%, -50%);
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    border-color: white;
+    border-width: 0px;
+    border-radius: 100%;
+    transition: 0.3s ease-in-out;
+
+}
+
+.menu-card-item:hover .menu-card-link {
+    width: 20px;
+    height: 20px;
+}
+
+.menu-card-item.checked .menu-card-link {
+    width: 30px;
+    height: 30px;
+    background: none;
+    border: solid 5px white;
+    border-radius: 100%;
+}
+
+.menu-card-title {
+    margin-left: 100px;
+    line-height: 80px;
+    color: white;
+    text-transform: capitalize;
+    font-size: 20px;
+    transition: 0.3s ease-in-out;
+}
+
+.menu-card-item.checked .menu-card-title {
+    font-size: 25px;
+    margin-left: 80px;
+}
+
+.template-menu-card-item {
+    display: none;
+}
+
+/* Card general part */
+.card {
+    background-color: white;
+    min-height: 600px;
+    width: 70%;
+    min-width: 700px;
+    margin-top: 100px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    transform-style: preserve-3d;
+}
+
+.card * {
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+    transform: translateZ(1px);
+}
+
+.card-tab-2 {
+    margin: 0;
+    display: inline-grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 600px;
+}
+
+.big-words {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.big-words h2 {
+    font-size: 60px;
+    transform: translateZ(20px);
+}
+
+.img-background {
+    background-size: cover;
+}
+
+.img-background div {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    background-color: #00000094;
+}
+
+.img-background p {
+    color: white;
+    font-size: 60px;
+    text-align: center;
+    padding: 50px;
+    transform: translateZ(50px);
+}
+
+.vert-time-line {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    margin-left: -200px;
+    flex-wrap: wrap;
+    max-height: 600px;
+}
+
+@media only screen and (max-width: 1700px) {
+    .vert-time-line {
+        max-height: initial;
+    }
+}
+
+.point {
+    width: 16px;
+    height: 16px;
+    background: white;
+    border: solid 5px #062037;
+    border-radius: 16px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.point::after {
+    content: " ";
+    position: absolute;
+    height: 500px;
+    border-left: solid 5px #062037;
+    top: calc(100% + 5px);
+    left: calc(50% - 2px);
+}
+
+.point:not(.big-point):before {
+    content: " ";
+    position: absolute;
+    height: 100px;
+    border-left: solid 5px #062037;
+    bottom: calc(100% + 5px);
+    left: calc(50% - 2px);
+}
+
+.big-point {
+    width: 24px;
+    height: 24px;
+    border-radius: 24px;
+}
+
+.point .date1 {
+    position: absolute;
+    right: calc(100% + 20px);
+    text-align: right;
+    width: 100px;
+    top: -4px;
+}
+
+.point .date2 {
+    position: absolute;
+    right: calc(100% + 20px);
+    text-align: right;
+    width: 100px;
+    bottom: -4px;
+}
+
+.point .date1, .point .date2 {
+    color: #062037;
+    font-size: 20px;
+}
+
+.point .title {
+    width: 300px;
+    margin-left: calc(100% + 20px);
+    font-size: 40px;
+    transform: translateZ(30px);
+}
+
+.point .title p {
+    color: gray;
+    font-size: 20px;
+    margin-top: -10px;
+    transform: translateZ(-10px);
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    height: 600px;
+}
+
+.card-grid div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.card-grid div:nth-child(2n + 1){
+    color: white;
+}
+
+.card-grid div:nth-child(2n){
+    background-color: white;
+}
+
+@media only screen and (max-width: 1700px) {
+    .card-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .card-grid div:nth-child(4n),.card-grid div:nth-child(4n+1){
+        color: white;
+        background: none;
+    }
+
+    
+    .card-grid div:nth-child(4n+2),.card-grid div:nth-child(4n+3){
+        color: black;
+        background-color: white;
+    }
+}
+
+.card-grid h2{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) ;
+    text-align: center;
+    font-size: 30px;
+    opacity: 1;
+    transition: 0.3s ease-in-out;
+}
+
+.card-grid p{
+    display: block;
+    text-align: center;
+    font-size: 20px;
+    margin: 10px;
+    opacity: 0;
+    transition: 0.3s ease-in-out;
+}
+
+.card-grid div:hover h2{
+    opacity: 0;
+    transform: translate(-50%,-150%);
+}
+
+.card-grid div:hover p{
+    opacity: 1;
+}
+
+.mini-card-container {
+    display: grid;
+    grid-template: 1fr 1fr / 1fr 1fr;
+    justify-items: stretch;
+    height: 600px;
+}
+
+.mini-card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    color: white;
+    border-radius: 20px;
+    margin: 20px;
+}
+
+.mini-card {
+    display: block;
+    background-size: cover;
+    overflow: hidden;
+    transform: translateZ(10px);
+}
+
+.mini-card div{
+    background-color: rgba(0, 0, 0, 0.438);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.mini-card h2{
+    display: block;
+    transform: translateZ(50px);
+    text-decoration: none;
+}
+
+.mini-card p {
+    text-align: center;
+    display: block;
+    padding: 0 30px;
+    height: 0;
+    overflow: hidden;
+    transition: 0.3s ease-in-out;
+    text-decoration: none;
+    transform: translateZ(40px);
+}
+
+.mini-card:hover p {
+    height: 50px;
+}
+
+/* Card specific part */
+#qui-suis-je .img-background {
+    background-image: url("../ressources/programming-861x646.jpg");
+    background-color: #2b2b2b;
+}
+
+#mon-parcours {
+    overflow: hidden;
+    min-height: auto;
+}
+
+#mes-competences {
+    background: linear-gradient(169deg, #0caaff 0%, #090441 100%);
+}
+
+#mes-projets {
+    background: none;
+    box-shadow: none;
+}
+
+#img-piwigo {
+    background-image: url("https://fr.piwigo.org/./plugins/piwigo-piwigodotorg/images/piwigo.org.svg")
+}
+
+#img-jv {
+    background-image: url("https://img.itch.zone/aW1nLzQzNTA5NjMucG5n/315x250%23c/MOE%2Fuj.png")
+}
+
+#img-na {
+    background-image: url("https://nantarena.net/public/img/NA-139.jpg")
+}
+
+#img-site {
+   background-image: linear-gradient(169deg, #0caaff 0%, #090441 100%) 
+}

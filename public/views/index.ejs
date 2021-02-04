@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="css/index.css">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Reem+Kufi&display=swap" rel="stylesheet">
+<body>
+    <header>
+        <img src="../ressources/imageprofil.png">
+        <h1>Zacharie Guet</h1>
+        <p>20 ans - Nantes</p>
+    </header>
+
+    <div class="top-bar"><p>Zacharie Guet</p></div>
+
+    <%- include('menu'); %>
+
+    <div class="card-container">
+        <%- include('card-qui-suis-je'); %>
+        <%- include('card-mon-parcours'); %>
+        <%- include('card-mes-competences'); %>
+        <%- include('card-mes-projets'); %>
+    </div>
+</body>
+
+<script type="text/javascript"
+        src="../js/menu.js"></script>
+</html>
